@@ -5,12 +5,12 @@ use App\Models\Task;
 use Illuminate\Support\Facades\Log;
 
 class TaskService {
-
+    // get all task
     public function getTask(){
         $task = Task::where('status', 1)->orderByDesc('created_at')->limit(5)->get();
        return $task->toArray();
     }
-
+    // store task
     public function storeTask(
         string $title,
         string $description,
@@ -31,7 +31,7 @@ class TaskService {
         return [$type,$msg];
     }
 
-
+    // update task status
     public function updateTaskStatus(
         object $task,
     ){
