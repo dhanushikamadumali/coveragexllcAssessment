@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->ulid('id')->primary(); // Ensure ULID is properly defined
+            $table->ulid('id')->primary(); // ULID is properly defined
             $table->string('title');
             $table->string('description');
             $table->tinyInteger('status')->default(1); // 1 = active, 0 = inactive
